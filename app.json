@@ -1,0 +1,36 @@
+{
+  "name": "daory-vote",
+  "description": "DAOry Council Election voting system",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-24",
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": {
+      "description": "Supabase project URL",
+      "required": true
+    },
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": {
+      "description": "Supabase anon/public key",
+      "required": true
+    },
+    "SUPABASE_SERVICE_ROLE_KEY": {
+      "description": "Supabase service role key (server only)",
+      "required": true
+    },
+    "HELIUS_API_KEY": {
+      "description": "Helius API key for NFT metadata",
+      "required": true
+    },
+    "SOLANA_RPC_URL": {
+      "description": "Solana RPC URL with API key (server only)",
+      "required": false
+    },
+    "NEXT_PUBLIC_SOLANA_RPC": {
+      "description": "Public Solana RPC for wallet connection",
+      "value": "https://api.mainnet-beta.solana.com"
+    }
+  }
+}
