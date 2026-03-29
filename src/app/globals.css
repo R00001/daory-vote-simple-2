@@ -1,26 +1,163 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Tusker Grotesk";
+  src: url("/fonts/tusker-grotesk-6600-semibold.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 600;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-daory-bg: #000000;
+  --color-daory-card: #060606;
+  --color-daory-border: #ffffff14;
+  --color-daory-border-hover: #ffffff3d;
+  --color-daory-cyan: #00bdd7;
+  --color-daory-cyan-light: #39c3d9;
+  --color-daory-cyan-dark: #06b7d1;
+  --color-daory-text: #ffffff;
+  --color-daory-muted: #999999;
+  --color-daory-surface: #0a0a0a;
+  --font-heading: "Tusker Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #000000;
+  color: #ffffff;
+  font-family: var(--font-body);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Print styles */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html, body {
+    background: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  /* Hide interactive elements */
+  header, footer,
+  .wallet-adapter-button,
+  button,
+  [class*="animate-pulse"] {
+    display: none !important;
+  }
+
+  /* Keep results page header visible */
+  h1, h2, h3 {
+    display: block !important;
+  }
+
+  /* Force backgrounds */
+  [class*="bg-daory-card"] {
+    background-color: #060606 !important;
+  }
+
+  [class*="bg-daory-cyan"] {
+    background-color: #00bdd7 !important;
+  }
+
+  [class*="bg-amber"] {
+    background-color: #f59e0b !important;
+  }
+
+  [class*="bg-emerald"] {
+    background-color: #10b981 !important;
+  }
+
+  [class*="bg-sky"] {
+    background-color: #0ea5e9 !important;
+  }
+
+  [class*="border-daory-border"] {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  /* Ensure text colors print */
+  [class*="text-daory-cyan"] {
+    color: #00bdd7 !important;
+  }
+
+  [class*="text-amber"] {
+    color: #f59e0b !important;
+  }
+
+  [class*="text-daory-muted"] {
+    color: #999999 !important;
+  }
+
+  /* Layout for print */
+  .max-w-6xl, .max-w-4xl, .max-w-7xl {
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Avoid page breaks inside cards */
+  [class*="bg-daory-card"] {
+    break-inside: avoid;
+  }
+
+  /* Page break before full ranking */
+  .mb-8:has(+ [class*="overflow-hidden"]) {
+    break-before: page;
+  }
+
+  /* Sticky elements should be static */
+  .sticky {
+    position: static !important;
+  }
+
+  /* Charts - ensure they render */
+  canvas {
+    max-width: 100% !important;
+  }
+}
+
+/* Wallet adapter modal overrides */
+.wallet-adapter-modal-wrapper {
+  background: #060606 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.wallet-adapter-button {
+  background: transparent !important;
+  border: 1px solid #00bdd7 !important;
+  color: #00bdd7 !important;
+  border-radius: 4px !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  font-size: 14px !important;
+  letter-spacing: 0.05em !important;
+}
+
+.wallet-adapter-button:hover {
+  background: rgba(0, 189, 215, 0.1) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
 }

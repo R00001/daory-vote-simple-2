@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "standalone",
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "aurorians.cdn.aurory.io",
+        pathname: "/aurorians-v2/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
