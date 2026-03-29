@@ -41,7 +41,7 @@ export default function DelegatePage() {
               <li className="flex gap-2">
                 <span className="text-daory-cyan">03</span>
                 <span>
-                  Prove ownership with a tiny SOL transfer (&lt;0.000002 SOL)
+                  Prove ownership with a tiny SOL transfer (&lt;0.0001 SOL)
                 </span>
               </li>
               <li className="flex gap-2">

@@ -84,7 +84,8 @@ export async function POST(request: NextRequest) {
   const crypto = await import("crypto");
   const randomBytes = crypto.randomBytes(4);
   const randomNum = randomBytes.readUInt32BE(0);
-  const verificationLamports = 10000 + (randomNum % 90000000);
+  // Range: 1000 - 99999 lamports = 0.000001 - 0.000099 SOL (always 4+ leading zeros)
+  const verificationLamports = 1000 + (randomNum % 99000);
 
   // Upsert the delegation request
   if (existing) {
