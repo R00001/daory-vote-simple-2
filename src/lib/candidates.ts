@@ -139,7 +139,7 @@ export const candidates: Candidate[] = [
     discordName: "mvb_gg",
     aurorianNumber: 6813,
     imageUrl: `${AURORIAN_IMAGE_BASE}/6813.png`,
-    role: "Unspecified",
+    role: "Advisor",
     vision:
       "Turn it into a community-led gaming alliance engaging the Aurory gaming community while freeing web3 speculators.",
     experience: "",
@@ -152,5 +152,4 @@ export const ROLES = [
   "Finance & Investment",
   "Infrastructure & Development",
   "Advisor",
-  "Unspecified",
 ] as const;

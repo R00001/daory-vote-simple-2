@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
   // Validate councillor/advisor limits
   const councillorPicks = candidateIds.filter((id) => {
     const c = candidates.find((c) => c.id === id);
-    return c && ((COUNCILLOR_ROLES as readonly string[]).includes(c.role) || c.role === "Unspecified");
+    return c && (COUNCILLOR_ROLES as readonly string[]).includes(c.role);
   });
   const advisorPicks = candidateIds.filter((id) => {
     const c = candidates.find((c) => c.id === id);

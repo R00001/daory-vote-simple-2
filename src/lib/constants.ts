@@ -9,7 +9,7 @@ export const TOTAL_SNAPSHOT_NFTS = 9997;
 export const ELECTION_START = new Date("2026-03-30T00:00:00Z");
 export const ELECTION_END = new Date("2026-04-06T23:59:59Z");
 
-// Councillor roles (not Advisor, not Unspecified)
+// Councillor roles (not Advisor)
 export const COUNCILLOR_ROLES = [
   "Community & Outreach",
   "Finance & Investment",

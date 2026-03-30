@@ -55,7 +55,7 @@ const ROLE_STYLE: Record<string, { dot: string; bar: string; chart: string }> = 
 };
 
 function isCouncillorRole(role: string) {
-  return (COUNCILLOR_ROLES as readonly string[]).includes(role) || role === "Unspecified";
+  return (COUNCILLOR_ROLES as readonly string[]).includes(role);
 }
 
 function shortRole(role: string) {
@@ -126,7 +126,7 @@ export default function ResultsPage() {
 
   // Role groups for charts
   const roleGroups = useMemo(() => {
-    const roles = ["Community & Outreach", "Finance & Investment", "Infrastructure & Development", "Advisor", "Unspecified"] as const;
+    const roles = ["Community & Outreach", "Finance & Investment", "Infrastructure & Development", "Advisor"] as const;
     return roles.map((role) => {
       const rc = allRanked.filter((c) => c.role === role);
       return { role, candidates: rc, totalVotes: rc.reduce((s, c) => s + c.votes, 0) };

@@ -25,7 +25,7 @@ export default function VotePage() {
 
   // Split candidates by type
   const councillorCandidates = useMemo(
-    () => candidates.filter((c) => (COUNCILLOR_ROLES as readonly string[]).includes(c.role) || c.role === "Unspecified"),
+    () => candidates.filter((c) => (COUNCILLOR_ROLES as readonly string[]).includes(c.role)),
     []
   );
   const advisorCandidates = useMemo(

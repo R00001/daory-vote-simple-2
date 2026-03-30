@@ -2,8 +2,7 @@ export type CandidateRole =
   | "Community & Outreach"
   | "Finance & Investment"
   | "Infrastructure & Development"
-  | "Advisor"
-  | "Unspecified";
+  | "Advisor";
 
 export interface Candidate {
   id: string;
