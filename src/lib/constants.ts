@@ -6,8 +6,8 @@ export const ADVISOR_SEATS = 3;
 export const TOTAL_SNAPSHOT_NFTS = 9997;
 
 // Election window (adjust before launch)
-export const ELECTION_START = new Date("2026-03-30T00:00:00Z");
-export const ELECTION_END = new Date("2026-04-06T23:59:59Z");
+export const ELECTION_START = new Date("2026-04-01T15:00:00Z"); // Wed 1 Apr 17:00 CET
+export const ELECTION_END = new Date("2026-04-13T15:00:00Z");   // Sun 13 Apr 17:00 CET
 
 // Councillor roles (not Advisor)
 export const COUNCILLOR_ROLES = [
