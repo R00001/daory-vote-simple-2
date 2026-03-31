@@ -139,10 +139,11 @@ export const candidates: Candidate[] = [
     discordName: "mvb_gg",
     aurorianNumber: 6813,
     imageUrl: `${AURORIAN_IMAGE_BASE}/6813.png`,
-    role: "Advisor",
+    role: "Finance & Investment",
     vision:
       "Turn it into a community-led gaming alliance engaging the Aurory gaming community while freeing web3 speculators.",
-    experience: "",
+    experience:
+      "Been part of Aurory since mint and Daory since its inception, in crypto for over a decade and 4 years professionally in Web3 BD. Currently leading BD & partnerships at Softstack, a web3 dev & cybersecurity firm active since 2017.\n\nI want to contribute to a clean make-over of the DAO. Make investors \"whole\" and move the focus to gamers and supporting Aurory's UA and UR and do this in a clean, legal and fair manner.",
   },
 ];
 
