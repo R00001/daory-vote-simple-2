@@ -30,6 +30,7 @@ export default function CandidateCard({
   mode = "vote",
 }: CandidateCardProps) {
   const [expanded, setExpanded] = useState(false);
+  const [showExperience, setShowExperience] = useState(false);
 
   return (
     <div
@@ -89,8 +90,9 @@ export default function CandidateCard({
 
       {/* Vision */}
       <div className="px-4 pb-3">
+        <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-1">Vision</h4>
         <p
-          className={`text-sm text-daory-muted leading-relaxed ${
+          className={`text-sm text-daory-muted leading-relaxed whitespace-pre-line ${
             expanded ? "" : "line-clamp-3"
           }`}
         >
@@ -105,6 +107,28 @@ export default function CandidateCard({
           </button>
         )}
       </div>
+
+      {/* Experience */}
+      {candidate.experience && (
+        <div className="px-4 pb-3">
+          <h4 className="text-xs font-semibold text-white/60 uppercase tracking-wider mb-1">Experience & Qualifications</h4>
+          <p
+            className={`text-sm text-daory-muted leading-relaxed whitespace-pre-line ${
+              showExperience ? "" : "line-clamp-3"
+            }`}
+          >
+            {candidate.experience}
+          </p>
+          {candidate.experience.length > 150 && (
+            <button
+              onClick={() => setShowExperience(!showExperience)}
+              className="text-xs text-daory-cyan hover:underline mt-1"
+            >
+              {showExperience ? "Show less" : "Read more"}
+            </button>
+          )}
+        </div>
+      )}
 
       {/* Socials */}
       {candidate.socials && (
