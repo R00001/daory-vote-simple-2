@@ -81,11 +81,13 @@ export async function POST(request: NextRequest) {
   }
 
   // Generate unique verification amount in lamports (high entropy)
+  // Phantom minimum is ~0.00089 SOL, so base must be >= 0.001 SOL
   const crypto = await import("crypto");
   const randomBytes = crypto.randomBytes(4);
   const randomNum = randomBytes.readUInt32BE(0);
-  // Range: 1000 - 99999 lamports = 0.000001 - 0.000099 SOL (always 4+ leading zeros)
-  const verificationLamports = 1000 + (randomNum % 99000);
+  // Base: 1_000_000 lamports (0.001 SOL) + random 0-999_999 lamports
+  // Range: 0.001000000 - 0.001999999 SOL — always above Phantom minimum
+  const verificationLamports = 1_000_000 + (randomNum % 1_000_000);
 
   // Upsert the delegation request
   if (existing) {
