@@ -21,10 +21,10 @@ export default function Header() {
 
         <nav className="flex items-center gap-3 sm:gap-6">
           <Link href="/" className="text-daory-muted hover:text-white transition-colors text-xs sm:text-sm font-medium uppercase tracking-wider">
-            Vote
+            Proposals
           </Link>
-          <Link href="/results" className="text-daory-muted hover:text-white transition-colors text-xs sm:text-sm font-medium uppercase tracking-wider">
-            Results
+          <Link href="/council" className="text-daory-muted hover:text-white transition-colors text-xs sm:text-sm font-medium uppercase tracking-wider">
+            Council
           </Link>
           <Link href="/delegate" className="text-daory-muted hover:text-white transition-colors text-xs sm:text-sm font-medium uppercase tracking-wider hidden sm:block">
             Delegate

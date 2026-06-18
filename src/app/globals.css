@@ -144,6 +144,107 @@ body {
   background: rgba(0, 189, 215, 0.1) !important;
 }
 
+/* Rich text content (TipTap output) */
+.prose-daory {
+  color: #ffffff;
+  font-family: var(--font-body);
+}
+.prose-daory p {
+  margin: 0.75em 0;
+  color: #cccccc;
+}
+.prose-daory p:first-child {
+  margin-top: 0;
+}
+.prose-daory p:last-child {
+  margin-bottom: 0;
+}
+.prose-daory h1,
+.prose-daory h2,
+.prose-daory h3,
+.prose-daory h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 1.4em 0 0.5em;
+  line-height: 1.15;
+}
+.prose-daory h1 { font-size: 1.6rem; }
+.prose-daory h2 { font-size: 1.35rem; }
+.prose-daory h3 { font-size: 1.15rem; }
+.prose-daory h4 { font-size: 1rem; }
+.prose-daory strong { color: #ffffff; font-weight: 700; }
+.prose-daory em { color: #cccccc; }
+.prose-daory a {
+  color: #00bdd7;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-daory a:hover {
+  color: #39c3d9;
+}
+.prose-daory ul,
+.prose-daory ol {
+  margin: 0.75em 0;
+  padding-left: 1.4em;
+  color: #cccccc;
+}
+.prose-daory ul { list-style: disc; }
+.prose-daory ol { list-style: decimal; }
+.prose-daory li {
+  margin: 0.25em 0;
+}
+.prose-daory li > p { margin: 0; }
+.prose-daory blockquote {
+  border-left: 2px solid #00bdd7;
+  padding-left: 0.9em;
+  color: #999999;
+  font-style: italic;
+  margin: 1em 0;
+}
+.prose-daory code {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.1em 0.35em;
+  font-size: 0.85em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #ffffff;
+}
+.prose-daory pre {
+  background: #060606;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.9em 1em;
+  margin: 1em 0;
+  font-size: 0.85em;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.prose-daory pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.prose-daory hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1.5em 0;
+}
+.prose-daory img {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.prose-daory .is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #555;
+  pointer-events: none;
+  height: 0;
+  float: left;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 4px;

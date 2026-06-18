@@ -10,12 +10,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DAOry Vote | Council Election",
+  title: "DAOry Vote | Proposals",
   description:
-    "Vote for the DAOry Council candidates. Connect your wallet, verify your Aurorian NFTs, and cast your vote.",
+    "On-chain governance for the DAOry community. Vote on proposals and Council elections using your Aurorian NFTs.",
   openGraph: {
-    title: "DAOry Council Election",
-    description: "Vote for the DAOry Council. Each Aurorian NFT = 1 vote.",
+    title: "DAOry Proposals",
+    description: "Vote on DAOry community proposals. Each Aurorian NFT = 1 vote.",
     siteName: "DAOry Vote",
   },
 };

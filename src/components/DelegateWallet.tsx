@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 type Step = "form" | "pending" | "verify" | "done";
 
@@ -243,12 +244,12 @@ export default function DelegateWallet() {
             Now connect your <strong className="text-white">voting wallet</strong> on
             the Vote page to cast your ballot.
           </p>
-          <a
+          <Link
             href="/"
             className="inline-block px-6 py-2.5 border border-daory-cyan text-daory-cyan font-medium uppercase tracking-wider text-sm hover:bg-daory-cyan/10 transition-colors"
           >
-            Go Vote
-          </a>
+            Go to Proposals
+          </Link>
         </div>
       )}
     </div>
