@@ -328,5 +328,5 @@ Candidate images: `https://aurorians.cdn.aurory.io/aurorians-v2/current/images/m
 
 | File | Description |
 |---|---|
-| `data/snapshot.csv` | 9,997 Aurorian NFT mint addresses mapped to owner wallets. Taken March 24, 2025. |
+| `data/snapshot.csv` | 10,009 Aurorian NFT mint addresses mapped to owner wallets. Taken June 23, 2026 (merge of the Solana on-chain snapshot + SyncSpace custody snapshot; SyncSpace owner takes precedence on overlapping mints). |
 | `data/candidates.csv` | Raw council candidate applications (reference only — parsed data lives in `src/lib/candidates.ts`). |

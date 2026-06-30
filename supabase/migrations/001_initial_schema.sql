@@ -29,7 +29,10 @@ CREATE INDEX idx_votes_nft_mint ON votes(nft_mint);
 CREATE INDEX idx_votes_ballot_id ON votes(ballot_id);
 
 -- Vote tallies view (counts per-NFT votes per candidate)
-CREATE VIEW vote_tallies AS
+-- security_invoker=on so the view respects RLS of the querying role
+-- (Postgres views default to SECURITY DEFINER, which bypasses RLS).
+CREATE VIEW vote_tallies
+WITH (security_invoker = on) AS
 SELECT candidate_id, COUNT(*) as vote_count
 FROM votes GROUP BY candidate_id;
 

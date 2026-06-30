@@ -113,8 +113,11 @@ CREATE INDEX idx_proposal_votes_proposal  ON proposal_votes(proposal_id);
 CREATE INDEX idx_proposal_votes_option    ON proposal_votes(proposal_id, option_id);
 CREATE INDEX idx_proposal_votes_voter     ON proposal_votes(voter_wallet);
 
--- Aggregated tallies per proposal/option
-CREATE VIEW proposal_tallies AS
+-- Aggregated tallies per proposal/option.
+-- security_invoker=on so the view respects RLS of the querying role
+-- (Postgres views default to SECURITY DEFINER, which bypasses RLS).
+CREATE VIEW proposal_tallies
+WITH (security_invoker = on) AS
 SELECT
   proposal_id,
   option_id,
