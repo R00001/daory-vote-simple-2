@@ -19,11 +19,9 @@ function loadSnapshot() {
     const line = lines[i].trim();
     if (!line) continue;
 
-    const commaIndex = line.indexOf(",");
-    if (commaIndex === -1) continue;
-
-    const mint = line.substring(0, commaIndex);
-    const owner = line.substring(commaIndex + 1);
+    // Columns are Mint,Owner[,Note] - the optional Note is informational only.
+    const [mint, owner] = line.split(",");
+    if (!mint || !owner) continue;
 
     mintToOwner.set(mint, owner);
 

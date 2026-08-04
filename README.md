@@ -276,7 +276,18 @@ Edit `src/lib/candidates.ts`. Each candidate has: `id`, `discordName`, `aurorian
 
 ### Update the snapshot
 
-Replace `data/snapshot.csv` (format: `Mint,Owner`). Restart the server — the snapshot is loaded into memory on first request.
+Regenerate it from the chain:
+
+```bash
+node --env-file=.env scripts/snapshot-core.mjs --verify --resolve-escrow \
+  --exclude data/excluded-wallets.csv --out data/snapshot.csv
+```
+
+Restart the server — the snapshot is loaded into memory on first request.
+
+Format is `Mint,Owner,Note`. Only the first two columns are read by the app;
+`Note` is informational (`syncspace`, `listed:<marketplace>`, `loan:<program>`,
+`owner-unresolved`) and safe to ignore or drop.
 
 ### Auto-transition proposal statuses (optional)
 
@@ -328,5 +339,9 @@ Candidate images: `https://aurorians.cdn.aurory.io/aurorians-v2/current/images/m
 
 | File | Description |
 |---|---|
-| `data/snapshot.csv` | 10,009 Aurorian NFT mint addresses mapped to owner wallets. Taken June 23, 2026 (merge of the Solana on-chain snapshot + SyncSpace custody snapshot; SyncSpace owner takes precedence on overlapping mints). |
+| `data/snapshot.csv` | Eligibility snapshot: 8,630 Aurorian Core assets mapped to owner wallets, `Mint,Owner,Note`. Taken August 4, 2026 from the Metaplex Core collection, cross-checked against `getProgramAccounts`. Marketplace/loan escrows are resolved back to the real holder; wallets in `excluded-wallets.csv` are dropped. |
+| `data/excluded-wallets.csv` | Wallets removed from the snapshot (DAO treasuries, the v1→v2 redeem address, Aurory team wallets), with the reason for each. |
+| `data/snapshot-core.csv` | The same snapshot **before** exclusions (9,999 assets) — audit trail for what was removed. |
+| `data/v1-to-core.csv` | Maps legacy v1 Aurorian mints to their Core asset, traced through the June 2024 migration transactions. |
+| `data/premint-77-provenance.csv` | Provenance of the 77 Aurorians minted before the public sale: mint time, minter, candy machine, current holder. |
 | `data/candidates.csv` | Raw council candidate applications (reference only — parsed data lives in `src/lib/candidates.ts`). |

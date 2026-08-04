@@ -1,0 +1,8 @@
+Wallet,Category,Reason
+S1q3Z6w4i3UDGZn2ZEK2h7zVKHtSU2sLqDPqc58jA8p,dao,DAO treasury - the DAO must not vote on its own proposals
+CsKFoW9fNJcueYufg8cPEH59nzM1QH5FwPXUvLwS7GMD,dao,DAO treasury - also the Core royalty creator (35%)
+AUrJmx5NmEDK94YWGevJ46UCyiqWhydy5ZdjxgmizKG5,redeem,Redeem address - holds Core assets whose v1 has not been migrated yet; no end holder behind them
+8Kag8CqNdCX55s4A5W4iraS71h6mv6uTHqsJbexdrrZm,team,Aurory team - v1 royalty creator (65%)
+aury7LJUae7a92PBo35vVbP61GX8VbyxFKausvUtBrt,team,Aurory team - treasury of both Aurorians candy machines and v1 collection update authority
+paurUkH96miLCY531mvt3Kmna7W9aD7x2zUijRHhEcG,team,Aurory team - Core collection update authority
+2P8twAxdHUZ2cWgWYMrGVkYZELSEffhdjMgjSFu7cTFS,team,Aurory team - Core royalty creator (65%); currently holds 0 assets
