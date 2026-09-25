@@ -33,6 +33,16 @@ export default function ProposalVoter({
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
+  // Selections belong to the connected wallet; drop them when it changes
+  const walletKey = publicKey?.toBase58() ?? null;
+  const [selectionWallet, setSelectionWallet] = useState(walletKey);
+  if (selectionWallet !== walletKey) {
+    setSelectionWallet(walletKey);
+    setSelectedMints([]);
+    setSelectedOptions([]);
+    setError(null);
+  }
+
   const open = isVotingOpen(proposal);
   const status = effectiveStatus(proposal);
   const allowChange = proposal.allow_vote_change;
